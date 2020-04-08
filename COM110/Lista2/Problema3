@@ -1,0 +1,29 @@
+programa {
+	funcao inicio() {
+		//Problema 2 - calculo de notas//
+		real n1, n2, n3, n4, nf
+		
+		escreva ("Digite a nota 1: \n")
+		leia (n1)
+		escreva ("Digite a nota 2: \n")
+		leia (n2)
+		escreva ("Digite a nota 3: \n")
+		leia (n3)
+		escreva ("Digite a nota 4: \n")
+		leia (n4)
+		
+		nf = (n1+n2+n3+n4)/4
+		
+		se (nf >= 6)
+		{
+		    escreva ("O aluno foi aprovado!\nMédia final do aluno ", nf)
+		}
+		senao
+		{
+		    escreva ("O aluno foi reprovado!\nMédia final do aluno ", nf)
+		}
+		
+		//fim codigo//
+		
+	}
+}

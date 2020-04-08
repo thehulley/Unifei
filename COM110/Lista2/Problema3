@@ -1,6 +1,6 @@
 programa {
 	funcao inicio() {
-		//Problema 2 - calculo de notas//
+		//Problema 3 - calculo de notas//
 		real n1, n2, n3, n4, nf
 		
 		escreva ("Digite a nota 1: \n")

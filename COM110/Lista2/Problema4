@@ -1,0 +1,33 @@
+programa {
+	funcao inicio() {
+	    //Problema 4 - aumento de salario//
+	    
+		real sal, vaum, nsal
+		
+		escreva ("Digite o seu atual salário:(R$)\n")
+		leia (sal)
+		
+		se (sal <= 1000)
+		{
+		    vaum = (sal*15)/100
+		    nsal = sal+vaum
+		    escreva ("Seu salário teve um aumento de 15% que corresponde a ", vaum , ", seu novo salário sera de ", nsal, " reais!\n")
+		}
+		
+		se (sal > 1000.01 e sal < 1999.99)
+		{
+		    vaum = (sal*10)/100
+		    nsal = sal+vaum
+		    escreva ("Seu salário teve um aumento de 10% que corresponde a ", vaum , ", seu novo salário sera de ", nsal, " reais!\n")
+		}	
+		
+		se (sal >= 2000)
+		{
+		    vaum = (sal*5)/100
+		    nsal = sal+vaum
+		    escreva ("Seu salário teve um aumento de 5% que corresponde a ", vaum , ", seu novo salário sera de ", nsal, " reais!\n")
+		}
+		
+		//fim codigo//
+	}
+}

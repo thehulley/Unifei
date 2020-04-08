@@ -1,0 +1,24 @@
+programa 
+{
+	inclua biblioteca Matematica --> mat
+    
+	funcao inicio()
+	{
+		//Problema 1 - catetos//
+		
+		real ca1, ca2, hi
+		
+		escreva ("Digite o valor do primeiro cateto: \n")
+		leia (ca1)
+		escreva ("Digite o valor do segundo cateto: \n")
+		leia (ca2)		
+		
+		hi = ((ca1*ca1)+(ca2*ca2))
+		hi = mat.raiz(hi, 2.0)
+		
+		escreva ("\nO valor da hipotenusa é: ", hi, "\n")
+		
+		//fim codigo//
+		
+	}
+}

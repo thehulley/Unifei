@@ -1,0 +1,60 @@
+programa {
+    inclua biblioteca Matematica --> mat
+	funcao inicio() {
+		//Problema 6 - seleção de média//
+		
+		real n1, n2 , n3, med, mul , pe1, pe2, pe3
+		inteiro opcao
+		
+		escreva ("Digite o primeiro numero:\n")
+		leia (n1)
+		escreva ("Digite o segundo numero:\n")
+		leia (n2)
+		escreva ("Digite o terceiro numero:\n")
+		leia (n3)
+		
+		escreva("Agora escolha uma das operações abaixo\nDigite a letra que corresponde a opção desejada para continuar (maiúsculo)\n\n")
+		escreva("1 - Média aritmética: (n1 + n2 + n3)/3\n2 - Média geométrica: (n1 * n2 * 3)(1/3)\n3 - Média ponderada: ((1 * n1) + (2 * n2) + (3 * n3))/6\n0 - Cancelar todos os dados digitados e sair do programa\n")
+		leia (opcao)
+		
+		escolha(opcao)
+		{
+		    caso 1:
+		        escreva ("\nOpção Média Aritmética selecionada\n\n")
+		        
+		        med = (n1+n2+n3)/3
+		        
+		        escreva ("A média aritmética dos numeros (", n1, ", ", n2, ", ", n3, ") resultou em ", med, "\n")
+		    pare
+		    
+		    caso 2:
+		        escreva("\nOpção Média Geométrica selecionada\n\n")
+		        
+		        mul = (n1*n2*n3)
+		        med = mat.raiz(mul, 3.0)
+		        
+		        escreva ("A média geométrica dos numeros (", n1, ", ", n2, ", ", n3, ") resultou em ", med, "\n")
+		    pare
+		    
+		    caso 3:
+		        escreva ("\nOpção Média Ponderada Selecionada\n\n")
+		        
+		        escreva ("Digite o valor do peso da primeira nota:\n")
+		        leia (pe1)
+		        escreva ("Digite o valor do peso da segunda nota:\n")
+		        leia (pe2)
+		        escreva ("Digite o valor do peso da terceira nota:\n")
+		        leia (pe3)
+		        
+		        med = ((n1*pe1)+(n2*pe2)+(n3*pe3))/(pe1+pe2+pe3)
+
+		        escreva ("A média ponderada dos numeros (", n1, " - peso ", pe1, ", ", n2, " - peso ", pe2, ", ", n3, " - peso ", pe3, ") resultou em ", med, "\n")
+		    pare
+		    
+		    caso 0:
+		        escreva ("\nAdeus :(\n")
+		    pare
+		}
+		//fim codigo//
+	}
+}

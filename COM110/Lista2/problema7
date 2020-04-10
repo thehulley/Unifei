@@ -1,0 +1,28 @@
+programa {
+	funcao inicio()
+	{
+	    //Problema 7 - leitura de 2 numeros//
+	    
+	    real n1, n2, mai, men
+	    
+	    escreva ("Digite dois numeros\n(Primeiro digite um, aperte ENTER e digite o outro)\n\n")
+	    leia (n1, n2)
+	    
+	    se (n1 > n2)
+	    {
+	        mai = n1
+	        men = n2
+	    }
+	    senao
+	    {
+	        mai = n2
+	        men = n1
+	        
+	    }
+	    
+	    escreva ("-=-Lista ordenada-=-\n\n", men, "\n", mai, "\n")
+	    
+	    //fim codigo//
+	    
+	}
+}

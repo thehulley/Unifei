@@ -1,37 +1,48 @@
 programa {
-	funcao inicio() {
-		//Problema 2 - menor de 3 numeros//
-		
-		real n1, n2, n3
-		
-		escreva ("Digite o primeiro numero: \n")
-		leia (n1)
-		escreva ("Digite o segundo numero: \n")
-		leia (n2)		
-		escreva ("Digite o terceiro numero: \n")
-		leia (n3)		
-		
-		se(n1 == n2 ou n1 == n3 ou n2 == n3)
-		{
-		    escreva ("\nExistem dois ou mais numeros iguais na sua conta!\nNumero 1=", n1, "\nNumero 2=", n2, "\nNumero 3=", n3)
-		}
-		senao
-		{
-		    se(n1 > n2 e n1 > n3)
-		    {
-		        escreva ("\nO primeiro numero é o maior (", n1, ")")
-		    }
-		
-		    se(n2 > n1 e n2 > n3)
-		    {
-		        escreva ("\nO segundo numero é o maior (", n2, ")")
-		    }
-		
-		    se(n3 > n1 e n3 > n2)
-		    {
-		        escreva ("\nO terceiro numero é o maior (", n3, ")")
-		    }
-		}
-		//fim codigo//
+	funcao inicio()
+	{
+	    //Problema 2 - menor de 3 numeros// 
+	    
+	    real n1, n2, n3
+	    
+	    escreva ("Digite três numeros\n(Primeiro digite um, aperte ENTER e digite o outro)\n\n")
+	    leia (n1, n2, n3)
+	    
+	    se(n1 == n2 ou n1 == n3 ou n2 == n3)
+	    {
+	        escreva ("\nExistem um ou mais numeros com o mesmo valor! (", n1, ", ", n2, ", ", n3,")\nReinicie o programa e digite novamente os numeros\n")
+	    }
+	    senao
+	    {
+	        se(n1 > n2 e n2 > n3)
+	        {
+	            escreva ("\nO primeiro numero é o maior (", n1, ")\nE o terceiro é o menor (", n3, ")\n") 
+	        }
+	        se(n1 > n3 e n3 > n2)
+	        {
+	            escreva ("\nO primeiro numero é o maior (", n1, ")\nE o segundo é o menor (", n2, ")\n")
+	        }
+	        
+	        se(n2 > n1 e n1 > n3)
+	        {
+	            escreva ("\nO segundo numero é o maior (", n2, ")\nE o terceiro é o menor (", n3, ")\n")
+	        }
+	        se(n2 > n3 e n3 > n1)
+	        {
+	            escreva ("\nO segundo numero é o maior (", n2, ")\nE o primeiro é o menor (", n1, ")\n")
+	        }
+	        
+	        se(n3 > n2 e n2 > n1)
+	        {
+	            escreva ("\nO terceiro numero é o maior (", n3, ")\nE o primeiro é o menor (", n1, ")\n")
+	        }
+	        se(n3 > n1 e n1 > n2)
+	        {
+	            escreva ("\nO terceiro numero é o maior (", n3, ")\nE o segundo é o menor (", n2, ")\n")
+	        }
+	    }
+	    
+	    //fim codigo//
+	    
 	}
 }

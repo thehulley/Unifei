@@ -1,0 +1,41 @@
+programa {
+	funcao inicio()
+	{
+	    //Problema 8 - adaptar o problema 7//
+	    
+	    real n1, n2, n3
+	    
+	    escreva ("Digite três numeros\n(Primeiro digite um, aperte ENTER e digite o outro)\n\n")
+	    leia (n1, n2, n3)
+	    
+	    se(n1 < n2 e n2 < n3)
+	    {
+	        escreva ("-=-Lista ordenada-=-\n\n", n1, "\n", n2, "\n", n3, "\n")
+	    }
+	    se(n1 < n3 e n3 < n2)
+	    {
+	        escreva ("-=-Lista ordenada-=-\n\n", n1, "\n", n3, "\n", n2, "\n")
+	    }
+	    
+	    se(n2 < n1 e n1 < n3)
+	    {
+	        escreva ("-=-Lista ordenada-=-\n\n", n2, "\n", n1, "\n", n3, "\n")
+	    }
+	    se(n2 < n3 e n3 < n1)
+	    {
+	        escreva ("-=-Lista ordenada-=-\n\n", n2, "\n", n3, "\n", n1, "\n")
+	    }
+	    
+	    se(n3 < n2 e n2 < n1)
+	    {
+	        escreva ("-=-Lista ordenada-=-\n\n", n3, "\n", n2, "\n", n1, "\n")
+	    }
+	    se(n3 < n1 e n1 < n2)
+	    {
+	        escreva ("-=-Lista ordenada-=-\n\n", n3, "\n", n1, "\n", n2, "\n")
+	    }
+	    
+	    //fim codigo//
+	    
+	}
+}

@@ -1,0 +1,82 @@
+programa {
+    
+    inclua biblioteca Matematica --> mat  
+    
+	funcao inicio()
+	{
+	    //Problema 9 - Calculadora de raizes//
+	    
+	    real a, b, c, delta, raizdel, x1, x2, s
+	    logico rdelex
+	    
+	    escreva ("-=- Calculadora de equações do 2º Grau -=-\nA calculadora não mostra frações, portanto (x/x)=x.xxxxx\n\n")
+
+	    escreva ("Digite o valor de A:\n")
+	    leia (a)
+	        
+	    enquanto(a==0)
+	    {
+	        escreva ("\nO valor de A não pode ser 0, por favor digite novamente o valor de A:\n")
+	        leia (a)
+	    }
+	        
+	    escreva ("Digite o valor de B:\n")
+	    leia (b)
+	    escreva ("Digite o valor de C:\n")
+	    leia (c)
+	    
+	    delta = ((b*b)-4*a*c)
+	    escreva (delta)
+	    raizdel = mat.raiz(delta, 2.0)
+	    escreva (raizdel)
+	    rdelex = (delta < 0)
+	    
+	    se (b != 0 e c != 0)  // achar raizes x1 e x2 
+	    {
+	        se (rdelex == verdadeiro)  // raiz de delta negativo
+	        {
+	            escreva ("\n\nEssa equação não possui raízes reais!\n\n")   
+	        }
+	        senao
+	        {
+	            x1 = ((-1*b) + raizdel)/(2*a)
+	            
+	            x2 = ((-1*b) - raizdel)/(2*a)
+	        
+	            escreva ("\nRaizes da equação:\nX'=", x1, "\nX''=", x2, "\n")
+	        }
+	    }
+	    
+	    se (b != 0 e c == 0)  // equação incompleta, com c=0
+	    {
+	        escreva ("\nEsta é uma equação incompleta com C=0\n")
+	        
+	        s = -(b/a)
+	        
+	        escreva ("\nA solução da equação é:\nS={0, ", s, "}\n")
+	        
+	    }
+	    
+	    se (b == 0 e c != 0)  // equação incompleta, com b=0 
+	    {
+	        escreva ("\n\nEsta é uma equação incompleta com B=0\n")
+	        se ((c > 0 e a > 0) ou (c < 0 e a < 0))
+	        {
+	            escreva ("\nS = Ø, pois a e c tem o mesmo sinal.\n")
+	        }
+	        senao
+	        {
+	            escreva ("\nEssa equação possui resultado, mas infelizmente este programa não consegue realizar tal conta.\nPor favor recorra a um dos sites a seguir:\nhttps://www.wolframalpha.com/calculators/equation-solver-calculator (Todos os direitos do site são de Wolfram Alpha LLC)\nhttp://www.calculadoraonline.com.br/equacao-2-grau (Todos os direitos do site são de Calculadora Online)\n")
+	        }
+
+	    }
+	    
+	    se (b == 0 e c == 0)  // equação incompleta, b e c =0
+	    {
+	        escreva ("\nNos casos em que a equação apresenta os coeficientes b=0 e c=0, as raízes da equação do 2º grau incompleta são iguais a zero.\n")
+	    }
+	    
+	    //fim codigo//
+	    
+	}
+}

@@ -1,0 +1,36 @@
+programa {
+	funcao inicio()
+	{
+	    inteiro opcao
+	    
+	    opcao = 10 
+	    
+	    enquanto (opcao < 0 ou opcao > 3)
+	    {
+	        escreva ("\nEscolha uma das saudações abaixo\n\n1 - Olá\n2 - Oi\n3 - Salve\n0 - Sair do programa\n\n")
+	        leia (opcao)
+	        
+	        se (opcao == 1)
+	        {
+	            escreva ("\nOlá\n")
+	        }
+	        
+	        se (opcao == 2)
+	        {
+	            escreva ("\nOi\n")
+	        }
+	        
+	        se (opcao == 3)
+	        {
+	            escreva ("\nSalve\n")
+	        }
+	        
+	        se (opcao == 0)
+	        {
+	            escreva ("\nAdeus :(\n")
+	        }
+	        
+	    }
+	    
+	}
+}

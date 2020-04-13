@@ -1,0 +1,33 @@
+programa {
+	funcao inicio()
+	{
+	    
+	    inteiro min
+	    real quant, re
+	    caracter opcao
+	    
+	    opcao = 'S'
+	    
+	    enquanto (opcao == 'S' ou opcao == 's') 
+	    {
+	        quant = 0
+	        enquanto (quant <= 0)
+	        {
+	            escreva ("\n<==========>\nDigite o valor para x minutos:\nO valor deve ser maior que 0\n<==========>\n\n")
+	            leia (quant)
+	        }
+	        
+	        
+	        min = 60
+	        
+	        re = (quant * min)
+	            
+	        escreva ("\n<==========>\n", quant, " Minutos tem ", re, " Segundos\n<==========>\n")
+	            
+	        escreva ("\nDeseja realiza outra operação? (S/N)\n")
+	        leia (opcao)
+	    }
+	    
+	    escreva ("\nAdeus :(\n")
+	}
+}

@@ -1,0 +1,29 @@
+programa {
+	funcao inicio()
+	{
+	    
+	    real a, b, ad, su, mu, di
+	    
+	    escreva ("\nDigite um valor para A:\n")
+	    leia (a)
+	    
+	    b = 0
+	    
+	    enquanto (b == 0)
+	    {
+	        escreva ("\nDigite um valor para B:\nSe B=0, entao os resultados serão:\n(adição = ", a, ", Subtração = ", a, ", Multiplicação = 0 e não será possivel realizar a divisão)\n\n")
+	        leia (b)
+	    }
+
+	    ad = a + b
+	    su = a - b
+	    mu = a * b
+	    di = a / b
+	    
+	    //sei que dava pra deixa isso menor com apenas 1 escreva, mas estava meio confuso entao dividi em 3
+	    escreva ("\n-=-=-=- [Operações realizadas] -=-=-=-\n\n") 
+	    escreva ("A + B = ", ad, "  ( ", a, " + ", b, " )", "\nA - B = ", su, "  ( ", a, " - ", b, " )")            
+	    escreva ("\nA * B = ", mu, "  ( ", a, " * ", b, " )", "\nA / B = ", di, "  ( ", a, " / ", b, " )\n")
+	    
+	}
+}

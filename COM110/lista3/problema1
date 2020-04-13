@@ -1,0 +1,28 @@
+programa {
+    
+	inclua biblioteca Matematica --> mat
+    
+	funcao inicio()
+	{
+	    real n1, n2, c
+	    
+	    escreva ("\nDigite um numero :\n")
+	    leia (n1)
+	    
+	    c = 0
+	    
+	    enquanto(c <= 10) 
+	    {
+	        n2 = mat.potencia(n1, c)
+	        
+	        escreva (n1, " elevado a ", c, " = ", n2, "\n")
+	        
+	        c = c+1
+	    }
+	    
+	    
+	    
+	    
+	    
+	}
+}

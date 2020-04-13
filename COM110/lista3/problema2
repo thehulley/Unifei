@@ -1,0 +1,23 @@
+programa {
+    
+	inclua biblioteca Matematica --> mat
+	
+	funcao inicio()
+	{
+	    real n, c, re
+	    
+	    escreva ("\nDigite um valor (n) para que 3^n (3^0, 3^1, 3^2 até 3^n)\n")
+	    leia (n)
+	    
+	    c = 0
+	    
+	    enquanto(c <= n) 
+	    {
+	        re = mat.potencia(3, c)
+	        
+	        escreva ("\n3 elevado a ", c, " = ", re)
+	        
+	        c = c+1
+	    }
+	}
+}

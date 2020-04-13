@@ -1,0 +1,28 @@
+programa {
+	funcao inicio()
+	{
+	    
+	    inteiro c
+	    c = 6
+	    enquanto(c >= 0)
+	    {
+	        se (c == 6 ou c == 0)
+	        {
+	            escreva ("\n#######################")
+	        }
+	        
+	        se (c == 3)
+	        {
+	            escreva ("\n#   SEJA  BEM-VINDO   #")    
+	        }
+	        
+	        se (c != 0 e c != 6 e c != 3)
+	        {
+	            escreva ("\n#                     #")
+	        }
+	        
+	        c = c-1
+	    }
+
+	}
+}

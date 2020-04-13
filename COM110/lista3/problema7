@@ -1,0 +1,34 @@
+programa {
+	funcao inicio() 
+	{
+	    real alt, peso, imc
+	    caracter opcao
+	    
+	    opcao = 'S'
+	    
+	    enquanto(opcao == 'S' ou opcao == 's')
+	    {
+	        alt = 0.0
+	        peso = 0.0
+	        enquanto(alt <= 0)
+	        {
+	            escreva ("\nDigite a sua altura: (digite um valor maior que 0 e em metros, EX: 1.70 para 1.70m)\n\n")
+	            leia (alt)
+	        }
+	        
+	        enquanto(peso <= 0)
+	        {
+	            escreva ("\nDigite o seu peso: (digite um valor maior que 0 e em kg, EX: 70 para 70kg)\n\n")
+	            leia (peso)
+	        }
+	        
+	        imc = peso/(alt*alt)
+	        
+	        escreva ("\n<==========>\n\nSeu IMC é ", imc, "\n\n<==========>\n")
+	        escreva ("\nDeseja realizar outra operação? (S/N)\n")
+	        leia (opcao)
+	        
+	    }
+	    escreva ("\nAdeus :(")
+	}
+}

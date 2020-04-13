@@ -11,7 +11,7 @@ programa {
 	    
 	    enquanto (b == 0)
 	    {
-	        escreva ("\nDigite um valor para B:\nSe B=0, entao os resultados serão:\n(adição = ", a, ", Subtração = ", a, ", Multiplicação = 0 e não será possivel realizar a divisão)\n\n")
+	        escreva ("\nDigite um valor para B:\n\n<==========>\nSe B=0, entao os resultados serão:\n(adição = ", a, ", Subtração = ", a, ", Multiplicação = 0 e não será possivel realizar a divisão)\n<==========>\n\n")
 	        leia (b)
 	    }
 

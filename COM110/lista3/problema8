@@ -1,0 +1,30 @@
+programa {
+	funcao inicio()
+	{
+	    real hora
+	    
+	    hora = -1.1
+	    
+	    enquanto (hora < 0 ou hora > 23)
+	    {
+	        escreva ("Digite a hora atual:\n\n<==========>\n(No formato 24 horas, Ex: 22 para 10 horas da noite)\nO valor deve ser de 0 a 23\n<==========>\n\n")
+	        leia (hora)
+	        
+	        se (hora >= 5 e hora <= 11)
+	        {
+	            escreva ("\n<==========>\n    Manhã\n<==========>\n")
+	        }
+	        
+	        se (hora >= 12 e hora <= 17 )
+	        {
+	            escreva ("\n<==========>\n    Tarde\n<==========>\n")
+	        }
+	        
+	        se ((hora >= 18 e hora <= 23) ou (hora >= 0 e hora <= 4))
+	        {
+	            escreva ("\n<==========>\n    Noite\n<==========>\n")
+	        }
+	        
+	    }
+	}
+}

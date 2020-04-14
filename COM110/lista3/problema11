@@ -1,0 +1,74 @@
+programa
+{
+    funcao inicio()
+	{
+	    inteiro diaa, mesa, anoa, dian, mesn, anon
+	    cadeia msg1, msg2
+	    
+	    msg1 = "\n-=-=-=-[ Digite a data de hoje ]-=-=-=- 5/10/2001\n\n"
+	    msg2 = "\n-=-=-=-[ Digite a data de seu nascimento ]-=-=-=-\n\n"
+	    
+	    //parte atribuindo os valores para que as repetições funcionem
+	    diaa = 0
+	    mesa = 0
+	    anoa = 0
+	    
+	    dian = 5
+	    mesn = 10
+	    anon = 2001
+	    
+	    //parte pedindo a data atual (dia, mes e ano)
+	    enquanto(diaa <= 0 ou diaa > 32)
+	    {
+	        escreva (msg1, "Dia:   (xx)\n")
+	        leia (diaa)
+	    }
+	    enquanto(mesa <= 0 ou mesa > 12)
+	    {
+	        escreva (msg1, "Mês:   (xx)\n")
+	        leia (mesa)
+	    }
+	    enquanto(anoa <= 0)
+	    {
+	        escreva (msg1, "Ano:   (xxxx)\n")
+	        leia (anoa)
+	    }
+	    //fim
+	    
+	    //parte pedindo a data do nascimento (dia, mes e ano)
+	    enquanto(dian <= 0 ou dian > 32)
+	    {
+	        escreva (msg2, "Dia:   (xx)\n")
+	        leia (dian)
+	    }
+	    enquanto(mesn <= 0 ou mesn > 12)
+	    {
+	        escreva (msg2, "Mês:   (xx)\n")
+	        leia (mesn)
+	    }
+	    enquanto(anon <= 0)
+	    {
+	        escreva (msg2, "Ano:   (xxxx)\n")
+	        leia (anon)
+	    }
+	    //fim
+	    
+	    
+	    se (diaa == dian e mesa == mesn)
+	    {
+	        escreva ("\n<==========>\nParabéns hoje você completa ", anoa - anon, " anos\n<==========>\n")
+	    }
+	    
+	    se ((diaa > dian e mesa == mesn) ou (diaa == dian e mesa > mesn) ou (diaa < dian e mesa > mesn) ou (diaa > dian e mesa > mesn))
+	    {
+	        escreva ("\n<==========>\nVocê tem ", anoa - anon, " anos\n<==========>\n")
+	    }
+	    
+	    se ((diaa < dian e mesa == mesn) ou (diaa == dian e mesa < mesn) ou (diaa > dian e mesa < mesn) ou (diaa < dian e mesa < mesn))
+	    {
+	        escreva ("\n<==========>\nVocê tem ",anoa - anon - 1, " anos\n<==========>\n")
+	    }
+	    
+	    
+	}
+}

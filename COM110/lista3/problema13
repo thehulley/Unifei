@@ -1,0 +1,19 @@
+programa {
+	funcao inicio()
+	{
+	    
+	    inteiro n1, n2
+	    
+	    escreva ("Digite o primeiro numero:\n")
+	    leia (n1)
+	    escreva ("\nDigite o segundo numero:\n")
+	    leia (n2)
+	    escreva ("\n-=-=-[ Lista ]-=-=-\n")
+	    
+	    para (inteiro i=n1; i<=n2; i++)
+	    {
+	        escreva (i, "\n")
+	        
+	    }
+	}
+}

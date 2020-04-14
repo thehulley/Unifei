@@ -1,0 +1,39 @@
+programa {
+	funcao inicio()
+	{
+	    inteiro c, d, i, n, t
+	    
+	    c = 1
+	    d = 20
+	    i = 1
+
+	    escreva ("\n -=-=-[ Lista Crescente ]-=-=-\n")
+	    
+	    enquanto (c < 21)
+	    {
+	        escreva (c, " ")
+	        c = c+1
+	    }
+	    
+	    escreva ("\n-=-=-[ Lista Decrescente ]-=-=-\n")
+	    
+	    enquanto (d > 0)
+	    {
+	        escreva (d, " ")
+	        d = d-1
+	    }
+	    
+	    escreva ("\n -=-=-[ Numeros ímpares ]-=-=-\n")
+	    
+	    enquanto (i < 21)
+	    {
+	        t = i % 2
+	        se (t == 1)
+	        {
+	            escreva (i, " ")
+	        }
+	        i=i+1
+	    }
+	    
+	}
+}

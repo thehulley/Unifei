@@ -1,0 +1,28 @@
+programa {
+	funcao inicio()
+	{
+	    inteiro n, c
+	    
+	    n = 0
+	    c = 0
+	    
+	    enquanto (n < 2)
+	    {
+	        escreva ("Digite um numero:  (Maior que 2)\n")
+	        leia (n)
+	    }
+	    
+	    escreva ("\n\n-=-=-=-[ Imagem ]-=-=-=-\n")
+	    
+	    enquanto (c < n)
+	    {
+	        para (inteiro i = 0; i <= c; i++)
+	        {
+	            escreva ("#")
+	            
+	        }  
+	        escreva ("\n")
+	        c = c+1
+	    }
+	}
+}

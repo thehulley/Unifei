@@ -1,0 +1,30 @@
+programa {
+	funcao inicio()
+	{
+	    
+	    inteiro num, n, mai, men
+	    
+	    num = 1
+	    mai = -1
+	    men = 10000
+	    
+	    faca{
+	        escreva ("\nDigite um numero:\n")
+	        leia (n)
+	        
+	        se (n > mai)
+	        {
+	            mai = n
+	        }
+	        
+	        se (n < men)
+	        {
+	            men = n
+	        }
+
+	        num = n
+	    } enquanto (num >= 0)
+	    
+	    escreva ("\n\n-=-=-=-[ Menor numero digitado ]-=-=-=-\n", mai, "\n\n-=-=-=-[ Menor numero digitado ]-=-=-=-\n", men)
+	}
+}

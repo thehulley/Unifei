@@ -1,0 +1,59 @@
+programa {
+	funcao inicio()
+	{
+	    
+	    real vel, max, aci
+	    caracter opcao
+	    
+	    opcao = 'S'
+	    
+	    enquanto (opcao == 'S' ou opcao == 's')
+	    {
+	        vel = 0.0
+	        enquanto (vel <= 0)
+	        {
+	            escreva ("\nDigite a velocidade do carro:\n\n<==========>\n(Digite um valor maior que 0)\n<==========>\n\n")
+	            leia (vel)
+	        }
+	        
+	        max = 0.0
+	        enquanto (max <= 0)
+	        {
+	            escreva ("\n\nDigite a velocidade maxima da via:\n\n<==========>\n(Digite um valor maior que 0)\n<==========>\n\n")
+	            leia (max)
+	        }  
+	        
+	        aci = (vel * 100)/max
+	        escreva (aci)
+	        
+	        
+	        
+	        se (aci <= 100)
+	        {
+	            escreva ("\n\n<==========>\nNão houve multa\n<==========>\n")
+	        }
+	        
+	        se (aci > 100 e aci < 120)
+	        {
+	            escreva ("\n\n<==========>\nO carro estava ", aci - max,"% acima da velocidade da via, portanto valor da multa é R$ 85,13\n<==========>\n")
+	        }
+	        
+	        se (aci >= 120 e aci <= 150)
+	        {
+	            escreva ("\n\n<==========>\nO carro estava ", aci - max,"% acima da velocidade da via, portanto valor da multa é R$ 127,69\n<==========>\n")
+	        }
+	        
+	        se (aci > 150)
+	        {
+	            escreva ("\n\n<==========>\nO carro estava ", aci - max,"% acima da velocidade da via, portanto valor da multa é R$ 574,62\n<==========>\n")
+	        }
+	        
+	        escreva ("\nDeseja realizar outra operação?  (S/N)\n")
+	        leia (opcao)
+	        
+	        
+	    }
+	    
+	    escreva ("\nAdeus :(\n")
+	}
+}

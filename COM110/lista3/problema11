@@ -5,7 +5,7 @@ programa
 	    inteiro diaa, mesa, anoa, dian, mesn, anon
 	    cadeia msg1, msg2
 	    
-	    msg1 = "\n-=-=-=-[ Digite a data de hoje ]-=-=-=- 5/10/2001\n\n"
+	    msg1 = "\n-=-=-=-[ Digite a data de hoje ]-=-=-=-\n\n"
 	    msg2 = "\n-=-=-=-[ Digite a data de seu nascimento ]-=-=-=-\n\n"
 	    
 	    //parte atribuindo os valores para que as repetições funcionem
@@ -13,9 +13,9 @@ programa
 	    mesa = 0
 	    anoa = 0
 	    
-	    dian = 5
-	    mesn = 10
-	    anon = 2001
+	    dian = 0
+	    mesn = 0
+	    anon = 0
 	    
 	    //parte pedindo a data atual (dia, mes e ano)
 	    enquanto(diaa <= 0 ou diaa > 32)

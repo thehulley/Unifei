@@ -1,0 +1,34 @@
+programa {
+	funcao inicio()
+	{
+	    inteiro n1, n2, c
+	    
+	    n1 = -1
+	    n2 = -1
+	    
+	    enquanto (n1 < 0)
+	    {
+	        escreva ("Digite o primeiro valor:\n")
+	        leia (n1)
+	    }
+	    c = n1
+	    
+	    enquanto (n2 < 0)
+	    {
+	        escreva ("Digite o segundo valor:\n")
+	        leia (n2)
+	    }
+	    
+	    enquanto (c <= n2)
+	    {
+	        escreva ("\n-=-=-=-[ Tabela do numero ", c, " ]-=-=-=-\n")
+	        
+	        para (inteiro i=0; i<=10; i++)
+	        {
+	            escreva (c," x ", i, " = ", c*i, "\n")  
+	        }
+	        c = c+1
+	        
+	    }
+	}
+}

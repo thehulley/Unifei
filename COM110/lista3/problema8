@@ -3,27 +3,40 @@ programa {
 	{
 	    real hora
 	    
-	    hora = -1.1
+	    hora = -1.11
 	    
-	    enquanto (hora < 0 ou hora > 23)
+	    enquanto (hora < 0 ou hora > 23.59)
 	    {
-	        escreva ("Digite a hora atual:\n\n<==========>\n(No formato 24 horas, Ex: 22 para 10 horas da noite)\nO valor deve ser de 0 a 23\n<==========>\n\n")
+	        escreva ("Digite a hora atual:\n\n<==========>\n(No formato 24 horas, Ex: 22 para 10 horas da noite)\nO valor deve ser de 0 a 23\nO programa suporta minutos, portanto caso queira adcionar use dados como no exemplo a seguir. Ex: 1 hora e 25 minutos = 1.25\n<==========>\n\n")
 	        leia (hora)
 	        
-	        se (hora >= 5 e hora <= 11)
+	        se (hora >= 5.00 e hora <= 11.59)
 	        {
 	            escreva ("\n<==========>\n    Manhã\n<==========>\n")
 	        }
+	        se (hora >= 11.60 e hora <= 11.99)
+	        {
+	            escreva ("\n<==========>\n    O numero digitado estava acima do permitido, Hora = ", hora, "\nPortanto o valor foi automaticamente considerado como 12Hrs, com isso o periodo é o da tarde\n<==========>\n")
+	        }
 	        
-	        se (hora >= 12 e hora <= 17 )
+	        se (hora >= 12.00 e hora <= 17.59)
 	        {
 	            escreva ("\n<==========>\n    Tarde\n<==========>\n")
 	        }
+	        se (hora >= 17.60 e hora <= 17.99)
+	        {
+	            escreva ("\n<==========>\n    O numero digitado estava acima do permitido, Hora = ", hora, "\nPortanto o valor foi automaticamente considerado como 18Hrs, com isso o periodo é o da noite\n<==========>\n")
+	        }
 	        
-	        se ((hora >= 18 e hora <= 23) ou (hora >= 0 e hora <= 4))
+	        se ((hora >= 18.00 e hora <= 23.59) ou (hora >= 0.00 e hora <= 4.59))
 	        {
 	            escreva ("\n<==========>\n    Noite\n<==========>\n")
 	        }
+	        se (hora >= 4.60 e hora <= 4.99)
+	        {
+	            escreva ("\n<==========>\n    O numero digitado estava acima do permitido, Hora = ", hora, "\nPortanto o valor foi automaticamente considerado como 5Hrs, com isso o periodo é o da manhã\n<==========>\n")
+	        }
+	        
 	        
 	    }
 	}

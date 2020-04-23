@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-int e1()
+int main()
 {
   int x, n, z;
   printf("\nDigite um numero\n");

@@ -2,6 +2,10 @@
 #include <stdlib.h>
 #include <math.h>
 
+//
+  Wendel N. - 2020022457
+//
+
 int main()
 {
   int c, opcao,x,cont,espaco,sair,quant,salv,men,per;

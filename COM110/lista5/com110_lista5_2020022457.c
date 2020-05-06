@@ -2,16 +2,17 @@
 #include <stdlib.h>
 #include <math.h>
 
-//
-    Wendel N. - 2020022457
-//
+/*
+ Wendel N. - 2020022457
+*/
 
 /*******************************************************Codigo ainda incompleto*********************************************************/
 
 int main()
 {
-  int c, opcao,x,cont,espaco,sair,quant,salv,men,per;
-  double b,alt,area,c1,c2,hi,b1,b2,lad,bpro;
+  int c, opcao, x, cont, espaco, sair, quant, salv, men, per;
+  double b, alt, area, c1, c2, hi, b1, b2, lad, bpro;
+  char n[9];  // string especificamente para proteger todo o programa contra letras/caracteres
 
   double areaqua=0, bqua=0;  /*Variaveis para salvar o quadrado*/
 
@@ -23,7 +24,7 @@ int main()
 
   double areatra = 0, b1tra = 0, b2tra = 0, alttra = 0, c1tra = 0, c2tra = 0, hitra = 0;  /*Variaveis para salvar o trapezio*/
 
-  system("clear");  //  limpa o "flood"
+  system("clear");  // limpa o "flood" caso teste em linux
   quant=0;
 
   while(opcao!=6)
@@ -70,7 +71,6 @@ int main()
         c = c+1;
       }
 
-      char n[9];  // o dado da opcao é "colhido" como string para evitar o travamento do programa
 
       printf("\n        -=-[ Escolha uma das opções da lista ]-=-\n");
       scanf("%s",n);
@@ -95,7 +95,9 @@ int main()
         while(b<=0)  // proteçao contra valor menor ou igual a 0
         {
           printf("\nDigite o valor da base:\n");
-          scanf("%lf", &b);
+          scanf("%s",n);
+          printf("\n\nCaracter ou numero inserido - (%s)\n",n);
+          b=atoi(n);  // depois a string é convertida em int(caso o dado inserido seja uma letra/palavra/caracter especial a conversão considera esse dado como 0, fazendo assim com que o programa não trave)
         }
 
         area = b*b;  // calculo da area
@@ -139,7 +141,8 @@ int main()
         while(salv<1 || salv>2)  // proteção contra valores diferentes de 1 e 2
         {
           printf("Deseja salvar esta figura?  (1 - Sim / 2 - Não)\n");  
-          scanf("%d",&salv);
+          scanf("%s",n);
+          salv=atoi(n);  // depois a string é convertida em int(caso o dado inserido seja uma letra/palavra/caracter especial a conversão considera esse dado como 0, fazendo assim com que o programa não trave)
         }
 
         if(salv==1)  // salva a figura
@@ -172,13 +175,17 @@ int main()
         while(b<=0)  // proteçao contra valor menor ou igual a 0
         {
           printf("\nDigite o valor da base:\n");
-          scanf("%lf",&b);
+          scanf("%s",n);
+          printf("\n\nCaracter ou numero inserido - (%s)\n",n);
+          b=atoi(n);  // depois a string é convertida em int(caso o dado inserido seja uma letra/palavra/caracter especial a conversão considera esse dado como 0, fazendo assim com que o programa não trave)
         }
 
         while(alt<=0)  // proteçao contra valor menor ou igual a 0
         {
           printf("\nDigite o valor da altura:\n");
-          scanf("%lf",&alt);
+          scanf("%s",n);
+          printf("\n\nCaracter ou numero inserido - (%s)\n",n);
+          alt=atoi(n);  // depois a string é convertida em int(caso o dado inserido seja uma letra/palavra/caracter especial a conversão considera esse dado como 0, fazendo assim com que o programa não trave)
         }
 
         area = b*alt;  // calculo da area
@@ -227,7 +234,9 @@ int main()
         while(salv<1 || salv>2)  // proteção contra valores diferentes de 1 e 2
         {
           printf("Deseja salvar esta figura?  (1 - Sim / 2 - Não)\n");  
-          scanf("%d",&salv);
+          scanf("%s",n);
+          printf("\n\nCaracter ou numero inserido - (%s)\n",n);
+          salv=atoi(n);  // depois a string é convertida em int(caso o dado inserido seja uma letra/palavra/caracter especial a conversão considera esse dado como 0, fazendo assim com que o programa não trave)
         }
 
         if(salv==1)  // salva a figura
@@ -264,7 +273,9 @@ int main()
         while(b<=0)  // proteçao contra valor menor ou igual a 0
         {
           printf("\nDigite o valor de um dos lados do triângulo:\n");
-          scanf("%lf",&b);
+          scanf("%s",n);
+          printf("\n\nCaracter ou numero inserido - (%s)\n",n);
+          b=atoi(n);  // depois a string é convertida em int(caso o dado inserido seja uma letra/palavra/caracter especial a conversão considera esse dado como 0, fazendo assim com que o programa não trave)
         }
 
         area=(pow(b,2)*sqrt(3))/4;  // calculo da area
@@ -308,7 +319,9 @@ int main()
         while(salv<1 || salv>2)  // proteção contra valores diferentes de 1 e 2
         {
           printf("Deseja salvar esta figura?  (1 - Sim / 2 - Não)\n");  
-          scanf("%d",&salv);
+          scanf("%s",n);
+          printf("\n\nCaracter ou numero inserido - (%s)\n",n);
+          salv=atoi(n);  // depois a string é convertida em int(caso o dado inserido seja uma letra/palavra/caracter especial a conversão considera esse dado como 0, fazendo assim com que o programa não trave)
         }
 
         if(salv==1)  // salva a figura
@@ -348,7 +361,9 @@ int main()
         while(b<=0)  // proteçao contra valor menor ou igual a 0
         {
           printf("\nDigite o valor de um cateto:\n");
-          scanf("%lf",&b);
+          scanf("%s",n);
+          printf("\n\nCaracter ou numero inserido - (%s)\n",n);
+          b=atoi(n);  // depois a string é convertida em int(caso o dado inserido seja uma letra/palavra/caracter especial a conversão considera esse dado como 0, fazendo assim com que o programa não trave)
         }
 
         c1=pow(b,2);  // calculo da hipotenusa
@@ -392,7 +407,9 @@ int main()
         while(salv<1 || salv>2)  // proteção contra valores diferentes de 1 e 2
         {
           printf("Deseja salvar esta figura?  (1 - Sim / 2 - Não)\n");  
-          scanf("%d",&salv);
+          scanf("%s",n);
+          printf("\n\nCaracter ou numero inserido - (%s)\n",n);
+          salv=atoi(n);  // depois a string é convertida em int(caso o dado inserido seja uma letra/palavra/caracter especial a conversão considera esse dado como 0, fazendo assim com que o programa não trave)
         }
 
         if(salv==1)  // salva a figura
@@ -431,26 +448,34 @@ int main()
         while(b1<=0)  // proteção contra valores menores que 0
         {
           printf("\nDigite o valor da base menor do trapézio\n");
-          scanf("%lf",&b1);
+          scanf("%s",n);
+          printf("\n\nCaracter ou numero inserido - (%s)\n",n);
+          b1=atoi(n);  // depois a string é convertida em int(caso o dado inserido seja uma letra/palavra/caracter especial a conversão considera esse dado como 0, fazendo assim com que o programa não trave)
         }
         while(b2<=0)  // proteção contra valores menores que 0
         {
           printf("\nDigite o valor da base maior do trapézio:\n");
-          scanf("%lf",&b2);
+          scanf("%s",n);
+          printf("\n\nCaracter ou numero inserido - (%s)\n",n);
+          b2=atoi(n);  // depois a string é convertida em int(caso o dado inserido seja uma letra/palavra/caracter especial a conversão considera esse dado como 0, fazendo assim com que o programa não trave)
 
           if(b2<=b1)  // proteção contra bases iguais ou 'base menor' > 'base maior'
           {
             while(b2<=b1)
             {
               printf("\nO valor digitado para a 'base maior' deve ser maior e diferente do que foi digitado para a 'base menor'\n");
-              scanf("%lf",&b2);
+              scanf("%s",n);
+              printf("\n\nCaracter ou numero inserido - (%s)\n",n);
+              b2=atoi(n);  // depois a string é convertida em int(caso o dado inserido seja uma letra/palavra/caracter especial a conversão considera esse dado como 0, fazendo assim com que o programa não trave)
             }
           }
         }
         while(alt<=0)  // proteção contra valores menores que 0
         {
           printf("\nDigite o valor da altura do trapézio:\n");
-          scanf("%lf",&alt);
+          scanf("%s",n);
+          printf("\n\nCaracter ou numero inserido - (%s)\n",n);
+          alt=atoi(n);  // depois a string é convertida em int(caso o dado inserido seja uma letra/palavra/caracter especial a conversão considera esse dado como 0, fazendo assim com que o programa não trave)
         }
 
         bpro=(b2-b1);
@@ -500,7 +525,9 @@ int main()
         while(salv<1 || salv>2)  // proteção contra valores diferentes de 1 e 2
         {
           printf("Deseja salvar esta figura?  (1 - Sim / 2 - Não)\n");  
-          scanf("%d",&salv);
+          scanf("%s",n);
+          printf("\n\nCaracter ou numero inserido - (%s)\n",n);
+          salv=atoi(n);  // depois a string é convertida em int(caso o dado inserido seja uma letra/palavra/caracter especial a conversão considera esse dado como 0, fazendo assim com que o programa não trave)
         }
 
         if(salv==1)  // salva a figura

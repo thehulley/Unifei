@@ -6,23 +6,23 @@
  Wendel N. - 2020022457
 */
 
-/*******************************************************Codigo ainda incompleto*********************************************************/
+/********************************Codigo tecnicamente completo, mas ainda precisa de revisão************************************/
 
 int main()
 {
   int c, opcao, x, cont, espaco, sair, quant, salv, men, per;
   double b, alt, area, c1, c2, hi, b1, b2, lad, bpro;
-  char n[9];  // string especificamente para proteger todo o programa contra letras/caracteres
+  char n[9];  // string n especificamente para proteger todo o programa contra letras/caracteres
 
   double areaqua=0, bqua=0;  /*Variaveis para salvar o quadrado*/
 
   double arearet=0, bret=0, altret=0;  /*Variaveis para salvar o retangulo*/
 
-  double areaequ=0, bequ=0, altequ=0, c1equi=0, c2equi=0, hiequi=0;  /*Variaveis para salvar o triangulo equi*/
+  double areaequ=0, bequ=0;  /*Variaveis para salvar o triangulo equi*/
 
-  double area3ret=0, b3ret=0, alt3ret=0, c13ret=0, c23ret=0, hi3ret=0;  /*Variaveis para salvar o triangulo ret*/
+  double area3ret=0, b3ret=0, hi3ret=0;  /*Variaveis para salvar o triangulo ret*/
 
-  double areatra = 0, b1tra = 0, b2tra = 0, alttra = 0, c1tra = 0, c2tra = 0, hitra = 0;  /*Variaveis para salvar o trapezio*/
+  double areatra = 0, b1tra = 0, b2tra = 0, alttra = 0, hitra = 0;  /*Variaveis para salvar o trapezio*/
 
   system("clear");  // limpa o "flood" caso teste em linux
   quant=0;
@@ -109,23 +109,62 @@ int main()
         printf("\nPerímetro da figura: %lf\n\n\n",b*4);
         printf("=-=-=-=-=-=-=-=-=-=-=-=[ Figura ]=-=-=-=-=-=-=-=-=-=-=-=\n\n");
 
-        
         if(b<=28)  // gera a imagem apenas se a base menor que 28
         {
           while(cont<b)
           {
-            espaco=28-b;
+            espaco=28-b;  
+            
+            if (cont == 0 )
+            {
+              for(x = 0; x < espaco-1; x++)  // parte que cuida dos espacamentos do lado esquerdo
+              {
+                printf(" ");
+              }  
 
-            for(x = 0; x < espaco; x++)  // parte que cuida dos espacamentos do lado esquerdo
+              printf("■");
+
+              for(x = 0; x < b; x++)  // parte que cuida da geração da Imagem
+              {
+                printf(" ═");
+              }
+              printf(" ■");
+
+              printf("\n");
+            }
+
+            for(x = 0; x < espaco-1; x++)  // parte que cuida dos espacamentos do lado esquerdo
             {
               printf(" ");
-            }    
+            } 
+
+            printf("║");
 
             for(x = 0; x < b; x++)  // parte que cuida da geração da Imagem
             {
               printf(" #");
             }
+
+            printf(" ║");
             printf("\n");
+            
+            if (cont == b-1)
+            {
+              for(x = 0; x < espaco-1; x++)  // parte que cuida dos espacamentos do lado esquerdo
+              {
+                printf(" ");
+              }  
+
+              printf("■");
+
+              for(x = 0; x < b; x++)  // parte que cuida da geração da Imagem
+              {
+                printf(" ═");
+              }
+              printf(" ■");
+
+              printf("\n");
+            }
             cont=cont+1;
           }
         }
@@ -205,20 +244,60 @@ int main()
 
         if(alt<=26 && b<=26)  // gera a imagem apenas se a base e altura menor que 28
         {
+          espaco=28-b;
+
           while(cont<alt)
           {
-            espaco=28-b;
-            
-            for(x = 0; x < espaco; x++)  // parte que cuida dos espacamentos do lado esquerdo
+            if (cont == 0 )
             {
-              printf(" ");
+              for(x = 0; x < espaco-1; x++)  // parte que cuida dos espacamentos do lado esquerdo
+              {
+                printf(" ");
+              }  
+
+              printf("■");
+
+              for(x = 0; x < b; x++)  // parte que cuida da geração da Imagem
+              {
+                printf(" ═");
+              }
+              printf(" ■");
+
+              printf("\n");
             }
 
-            for(x = 0; x<b; x++)  // parte que cuida da geração da Imagem
+            for(x = 0; x < espaco-1; x++)  // parte que cuida dos espacamentos do lado esquerdo
+            {
+              printf(" ");
+            } 
+
+            printf("║");
+
+            for(x = 0; x < b; x++)  // parte que cuida da geração da Imagem
             {
               printf(" #");
             }
+
+            printf(" ║");
             printf("\n");
+            
+            if (cont == alt-1)
+            {
+              for(x = 0; x < espaco-1; x++)  // parte que cuida dos espacamentos do lado esquerdo
+              {
+                printf(" ");
+              }  
+
+              printf("■");
+
+              for(x = 0; x < b; x++)  // parte que cuida da geração da Imagem
+              {
+                printf(" ═");
+              }
+              printf(" ■");
+
+              printf("\n");
+            }
             cont=cont+1;
           }
         }
@@ -290,19 +369,47 @@ int main()
 
         if(b<=26)  // gera a imagem apenas se a base é menor ou igual a 26
         {
-          while(cont<alt)
+          while(cont<=b)
           {
-            for(x = 0; x<espaco; x++)  // parte que cuida dos espacamentos do lado esquerdo
+            if(cont==0)
+            {
+              for(x = 0; x<espaco; x++)  // parte que cuida dos espacamentos do lado esquerdo
+              {
+                printf(" ");
+              }
+              
+              printf("♦\n");
+            }
+
+            for(x = 0; x<espaco-1; x++)  // parte que cuida dos espacamentos do lado esquerdo
             {
               printf(" ");
             }
+            printf("╱");
 
             for(x = 0; x<cont; x++)  // parte que cuida da geração da Imagem
             {
               printf(" #");
             }
-
+            printf(" ╲");
             printf("\n");
+
+            if(cont==b)
+            {
+              for(x = 0; x<espaco-1; x++)  // parte que cuida dos espacamentos do lado esquerdo
+              {
+                printf(" ");
+              }
+              
+              printf("—");
+
+              for(x = 0; x<cont; x++)  // parte que cuida da geração da Imagem
+              {
+                printf(" —");
+              }
+
+              printf(" —");
+            }
             espaco=espaco-1;
             cont=cont+1;
           }
@@ -312,7 +419,6 @@ int main()
           printf("A imagem não pode ser gerada quando o valor de um dos lados é maior que 26.\n");
         }
         printf("\n\n=-=-=-=-=-=-=-=-=-=-=-=[ [][][] ]=-=-=-=-=-=-=-=-=-=-=-=\n\n");
-
 
         salv=0;  // define como valor de salv 0 para que caia na repetição
 
@@ -330,12 +436,7 @@ int main()
           quant=quant+1;
 
           areaequ = area;
-          bequ = b;
-          altequ = alt;  // atribuição de variaveis necessarias para o salvamento
-          c1equi = c1;
-          c2equi = c2;
-          hiequi = hi;
-
+          bequ = b;  // atribuição de variaveis necessarias para o salvamento
         }
         else  // "deleta" a figura
         {
@@ -379,20 +480,49 @@ int main()
 
         if(b<=28)  // gera a imagem apenas se a base (cateto) é menor ou igual a 28
         {
+          espaco=28-b;
+
           while(cont<b)
           {
-            espaco=28-b;
-            
-            for(x = 0; x < espaco; x++)  // parte que cuida dos espacamentos do lado esquerdo
+            if(cont==0)
+            {
+              for(x = 0; x < espaco-1; x++)  // parte que cuida dos espacamentos do lado esquerdo
+              {
+                printf(" ");
+              }
+              printf("║ ◥\n");
+            }
+
+            for(x = 0; x < espaco-1; x++)  // parte que cuida dos espacamentos do lado esquerdo
             {
               printf(" ");
             }
+
+            printf("║");
 
             for(x = 0; x<=cont; x++)  // parte que cuida da geração da Imagem
             {
               printf(" #");
             }
+
+            printf(" ◥");
+            
+            if(cont==b-1)
+            {
+              printf("\n");
+              for(x = 0; x < espaco-1; x++)  // parte que cuida dos espacamentos do lado esquerdo
+              {
+                printf(" ");
+              }
+              printf("■");
+
+              for(x = 0; x<=cont+1; x++)  // parte que cuida da geração da Imagem
+              {
+                printf(" ═");
+              }
+            }
             printf("\n");
+
             cont=cont+1;
           }
         }
@@ -418,12 +548,8 @@ int main()
           quant=quant+1;
 
           area3ret = area;
-          b3ret = b;
-          alt3ret = alt;  // atribuição de variaveis necessarias para o salvamento
-          c13ret = c1;
-          c23ret = c2;
+          b3ret = b;  // atribuição de variaveis necessarias para o salvamento
           hi3ret = hi;
-
         }
         else  // "deleta" a figura
         {
@@ -490,32 +616,71 @@ int main()
         printf("\nÁrea da figura: %lf",area);
         printf("\nPerímetro da figura: %lf\n\n\n", b1+b2+hi+alt);
         printf("=-=-=-=-=-=-=-=-=-=-=-=[ Figura ]=-=-=-=-=-=-=-=-=-=-=-=\n\n");
-        printf("Atenção, a figura abaixo é meramente ilustrativa e seus dados não condizem com a conta acima\n\n");
+        printf("Atenção, a figura abaixo é meramente ilustrativa\ne seus dados não condizem com a conta acima\n\n");
 
         cont=b1;
 
-        if(b2<=28)  // gera a imagem apenas se o valor da 'base maior' é menor ou igual a 28
+        if(b2<=26)  // gera a imagem apenas se o valor da 'base maior' é menor ou igual a 26
         {
+          espaco=28-b1;
+
           while(cont<b2)
           {
-            espaco=28-b1;
-            
-            for(x = 0; x < espaco; x++)  // parte que cuida dos espacamentos do lado esquerdo
+            if(cont == b1)
+            {
+              for(x = 0; x < espaco-1; x++)  // parte que cuida dos espacamentos do lado esquerdo
+              {
+                printf(" ");
+              }
+
+              printf("■");
+
+              for(x = 0; x<=cont; x++)  // parte que cuida da geração da Imagem
+              {
+                printf(" ═");
+              }
+              printf("\n");
+            }
+
+            for(x = 0; x < espaco-1; x++)  // parte que cuida dos espacamentos do lado esquerdo
             {
               printf(" ");
             }
+
+            printf("║");
 
             for(x = 0; x<=cont; x++)  // parte que cuida da geração da Imagem
             {
               printf(" #");
             }
+
+            printf(" ◥");
+
+            if(cont == b2-1)
+            {
+              printf("\n");
+
+              for(x = 0; x < espaco-1; x++)  // parte que cuida dos espacamentos do lado esquerdo
+              {
+                printf(" ");
+              }
+
+              printf("■");
+
+              for(x = 0; x<=cont+1; x++)  // parte que cuida da geração da Imagem
+              {
+                printf(" ═");
+              }
+            }
+
             printf("\n");
+
             cont=cont+1;
           }
         }
-        else  // se o valor da 'base maior' é maior que 28 exibe a mensagem
+        else  // se o valor da 'base maior' é maior que 26 exibe a mensagem
         {
-          printf("A imagem não pode ser gerada quando o valor da 'base maior' é maior que 28.\n");
+          printf("A imagem não pode ser gerada quando o valor da 'base maior' é maior que 26.\n");
         }
 
         printf("\n\n=-=-=-=-=-=-=-=-=-=-=-=[ [][][] ]=-=-=-=-=-=-=-=-=-=-=-=\n\n");
@@ -539,8 +704,6 @@ int main()
           b1tra = b1;
           b2tra = b2;
           alttra = alt;  // atribuição de variaveis necessarias para o salvamento
-          c1tra = c1;
-          c2tra = c2;
           hitra = hi;
 
         }
@@ -581,28 +744,69 @@ int main()
           
           cont=0;
 
-          if(bqua<=28)  // gera a imagem apenas se base menor que 28
+          if(bqua<=26)  // gera a imagem apenas se base menor que 26
           {
+
             while(cont<bqua)
             {
               espaco=28-bqua;
 
-              for(x = 0; x < espaco; x++)  // parte que cuida dos espacamentos do lado esquerdo
+              if (cont == 0 )
+              {
+                for(x = 0; x < espaco-1; x++)  // parte que cuida dos espacamentos do lado esquerdo
+                {
+                  printf(" ");
+                }  
+
+                printf("■");
+
+                for(x = 0; x < bqua; x++)  // parte que cuida da geração da Imagem
+                {
+                  printf(" ═");
+                }
+                printf(" ■");
+
+                printf("\n");
+              }
+
+              for(x = 0; x < espaco-1; x++)  // parte que cuida dos espacamentos do lado esquerdo
               {
                 printf(" ");
-              }    
+              } 
+
+              printf("║");
 
               for(x = 0; x < bqua; x++)  // parte que cuida da geração da Imagem
               {
                 printf(" #");
               }
+
+              printf(" ║");
               printf("\n");
+            
+              if (cont == bqua-1)
+              {
+                for(x = 0; x < espaco-1; x++)  // parte que cuida dos espacamentos do lado esquerdo
+                {
+                  printf(" ");
+                }  
+
+                printf("■");
+
+                for(x = 0; x < bqua; x++)  // parte que cuida da geração da Imagem
+                {
+                  printf(" ═");
+                }
+                printf(" ■");
+
+                printf("\n");
+              }
               cont=cont+1;
             }
           }
-          else  // caso a base maior que 28 exibe a mensagem
+          else  // caso a base maior que 26 exibe a mensagem
           {
-            printf("A imagem não pode ser gerada pois o valor digitado para a base é maior que 28.\n");
+            printf("A imagem não pode ser gerada pois o valor digitado para a base é maior que 26.\n");
           }
           printf("\n\n■■■■■■■■■■■■■■■■■■■■■■■[ [][][] ]■■■■■■■■■■■■■■■■■■■■■■■\n\n");
           /*Fim*/
@@ -626,20 +830,60 @@ int main()
 
           if(altret<=26 || bret<=26)  // gera a imagem apenas se base menor que 28
           {
+            espaco=28-bret;
+
             while(cont<altret)
             {
-              espaco=28-bret;
-            
-              for(x = 0; x < espaco; x++)  // parte que cuida dos espacamentos do lado esquerdo
+              if (cont == 0 )
               {
-                printf(" ");
+                for(x = 0; x < espaco-1; x++)  // parte que cuida dos espacamentos do lado esquerdo
+                {
+                  printf(" ");
+                }  
+
+                printf("■");
+
+                for(x = 0; x < bret; x++)  // parte que cuida da geração da Imagem
+                {
+                  printf(" ═");
+                }
+                printf(" ■");
+
+                printf("\n");
               }
 
-              for(x = 0; x<bret; x++)  // parte que cuida da geração da Imagem
+              for(x = 0; x < espaco-1; x++)  // parte que cuida dos espacamentos do lado esquerdo
+              {
+                printf(" ");
+              } 
+
+              printf("║");
+
+              for(x = 0; x < bret; x++)  // parte que cuida da geração da Imagem
               {
                 printf(" #");
               }
+
+              printf(" ║");
               printf("\n");
+            
+              if (cont == alt-1)
+              {
+                for(x = 0; x < espaco-1; x++)  // parte que cuida dos espacamentos do lado esquerdo
+                {
+                  printf(" ");
+                }  
+
+                printf("■");
+
+                for(x = 0; x < bret; x++)  // parte que cuida da geração da Imagem
+                {
+                  printf(" ═");
+                }
+                printf(" ■");
+
+                printf("\n");
+              }
               cont=cont+1;
             }
           }
@@ -653,7 +897,7 @@ int main()
 
 
           /*Ultimo triangulo equi salvo*/
-          /*areaequ, bequ, altequ, c1equi, c2equi, hiequi / Variaveis do triangulo equi*/
+          /*areaequ, bequ / Variaveis do triangulo equi*/
 
           printf("\n\n■■■■■■■■■■■■■■[ Triângulo Equilátero salvo ]■■■■■■■■■■■■■■\n\n");
           printf("\nÁrea da figura: %lf",areaequ);
@@ -665,19 +909,47 @@ int main()
 
           if(bequ<=26)  // gera a imagem apenas se base é menor ou igual a 26
           {
-            while(cont<altequ)
+            while(cont<=bequ)
             {
-              for(x = 0; x<espaco; x++)  // parte que cuida dos espacamentos do lado esquerdo
+              if(cont==0)
+              {
+                for(x = 0; x<espaco; x++)  // parte que cuida dos espacamentos do lado esquerdo
+                {
+                  printf(" ");
+                }
+              
+                printf("♦\n");
+              }
+
+              for(x = 0; x<espaco-1; x++)  // parte que cuida dos espacamentos do lado esquerdo
               {
                 printf(" ");
               }
+              printf("╱");
 
               for(x = 0; x<cont; x++)  // parte que cuida da geração da Imagem
               {
                 printf(" #");
               }
-
+              printf(" ╲");
               printf("\n");
+
+              if(cont==bequ)
+              {
+                for(x = 0; x<espaco-1; x++)  // parte que cuida dos espacamentos do lado esquerdo
+                {
+                  printf(" ");
+                }
+              
+                printf("—");
+
+                for(x = 0; x<cont; x++)  // parte que cuida da geração da Imagem
+                {
+                  printf(" —");
+                }
+
+                printf(" —");
+              }
               espaco=espaco-1;
               cont=cont+1;
             }
@@ -692,7 +964,7 @@ int main()
 
 
           /*Ultimo triangulo ret salvo*/
-          /*area3ret, b3ret, alt3ret, c13ret, c23ret, hi3ret / Variaveis do triangulo ret*/
+          /*area3ret, b3ret, hi3ret / Variaveis do triangulo ret*/
 
           printf("\n\n■■■■■■■■■■■■■■[ Triângulo Retangulo salvo ]■■■■■■■■■■■■■■\n\n");
           printf("\nHipotenusa: %lf",hi3ret);
@@ -704,20 +976,49 @@ int main()
 
           if(b3ret<=28)  // gera a imagem apenas se a base é menor ou igual a 28
           {
+            espaco=28-b3ret;
+
             while(cont<b3ret)
             {
-              espaco=28-b3ret;
-            
-              for(x = 0; x < espaco; x++)  // parte que cuida dos espacamentos do lado esquerdo
+              if(cont==0)
+              {
+                for(x = 0; x < espaco-1; x++)  // parte que cuida dos espacamentos do lado esquerdo
+                {
+                  printf(" ");
+                }
+                printf("║ ◥\n");
+              }
+
+              for(x = 0; x < espaco-1; x++)  // parte que cuida dos espacamentos do lado esquerdo
               {
                 printf(" ");
               }
+
+              printf("║");
 
               for(x = 0; x<=cont; x++)  // parte que cuida da geração da Imagem
               {
                 printf(" #");
               }
+
+              printf(" ◥");
+            
+              if(cont==b-1)
+              {
+                printf("\n");
+                for(x = 0; x < espaco-1; x++)  // parte que cuida dos espacamentos do lado esquerdo
+                {
+                  printf(" ");
+                }
+                printf("■");
+
+                for(x = 0; x<=cont+1; x++)  // parte que cuida da geração da Imagem
+                {
+                  printf(" ═");
+                } 
+              }
               printf("\n");
+
               cont=cont+1;
             }
           }
@@ -731,39 +1032,78 @@ int main()
 
 
           /*Ultimo trapezio salvo*/
-          /*areatra, b1tra, b2tra, alttra, c1tra, c2tra, hitra / Variaveis para salvar o trapezio*/
+          /*areatra, b1tra, b2tra, alttra, hitra / Variaveis para salvar o trapezio*/
 
-          printf("\n\n■■■■■■■■■■■■■■[ Triângulo Retangulo salvo ]■■■■■■■■■■■■■■\n\n");
+          printf("\n\n■■■■■■■■■■■■■■■■■■■[ Trapézio salvo ]■■■■■■■■■■■■■■■■■■■\n\n");
           printf("\nHipotenusa: %lf",hitra);
           printf("\nÁrea da figura: %lf",areatra);
           printf("\nPerímetro da figura: %lf\n\n\n", b1tra+b2tra+hitra+alttra);
           printf("=-=-=-=-=-=-=-=-=-=-=-=[ Figura ]=-=-=-=-=-=-=-=-=-=-=-=\n\n");
-          printf("Atenção, a figura abaixo é meramente ilustrativa e seus dados não condizem com a conta acima\n\n");
+          printf("Atenção, a figura abaixo é meramente ilustrativa\ne seus dados não condizem com a conta acima\n\n");
 
           cont=b1tra;
 
-          if(b2tra<=28)  // gera a imagem apenas se 'base maior' menor ou igual a 28
+          if(b2tra<=26)  // gera a imagem apenas se 'base maior' menor ou igual a 26
           {
+            espaco=28-b1tra;
+
             while(cont<b2tra)
             {
-              espaco=28-b1tra;
-            
-              for(x = 0; x < espaco; x++)  // parte que cuida dos espacamentos do lado esquerdo
+              if(cont == b1tra)
+              {
+                for(x = 0; x < espaco-1; x++)  // parte que cuida dos espacamentos do lado esquerdo
+                {
+                  printf(" ");
+                }
+
+                printf("■");
+
+                for(x = 0; x<=cont; x++)  // parte que cuida da geração da Imagem
+                {
+                  printf(" ═");
+                }
+                printf("\n");
+              }
+
+              for(x = 0; x < espaco-1; x++)  // parte que cuida dos espacamentos do lado esquerdo
               {
                 printf(" ");
               }
+
+              printf("║");
 
               for(x = 0; x<=cont; x++)  // parte que cuida da geração da Imagem
               {
                 printf(" #");
               }
+
+              printf(" ◥");
+
+              if(cont == b2tra-1)
+              {
+                printf("\n");
+
+                for(x = 0; x < espaco-1; x++)  // parte que cuida dos espacamentos do lado esquerdo
+                {
+                  printf(" ");
+                }
+
+                printf("■");
+
+                for(x = 0; x<=cont+1; x++)  // parte que cuida da geração da Imagem
+                {
+                  printf(" ═");
+                }
+              }
+
               printf("\n");
+
               cont=cont+1;
             }
           }
-          else  // se 'base maior' maior que 28 exibe a mensagem
+          else  // se 'base maior' maior que 26 exibe a mensagem
           {
-            printf("A imagem não pode ser gerada quando o valor da 'base maior' é maior que 28.\n");
+            printf("A imagem não pode ser gerada quando o valor da 'base maior' é maior que 26.\n");
           }
 
           printf("\n\n■■■■■■■■■■■■■■■■■■■■■■■[ [][][] ]■■■■■■■■■■■■■■■■■■■■■■■\n\n");

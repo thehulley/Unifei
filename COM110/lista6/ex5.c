@@ -36,8 +36,7 @@ int main()
         if (c + n > 26)
         {
           n = (c + n)-26;
-          printf ("\nvai da erro parça\n");
-
+          
           palavra[c] = alfabeto[n];
 
           printf ("%c", palavra[c]);
@@ -53,7 +52,6 @@ int main()
         else
         {
           n = 26 + n;
-          printf ("\nvai da menos erro parça\n");
 
           palavra[c] = alfabeto[n];
 

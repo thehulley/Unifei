@@ -3,11 +3,11 @@
 
 int main()
 {
-  int c, aluno, q, opcao, pont, resultado[10][2], apro;
+  int c, aluno, q, opcao, pont, resultado[10][2], apro, cadastrado;
   char resposta, n[2], gabarito[8];
 
   opcao = 0;
-
+  system ("clear");
 
   /*****Parte que cuida do gabarito*****/
   while (opcao != 1)
@@ -46,12 +46,32 @@ int main()
 
   /*****Parte que cuida das pontuações dos alunos*****/
 
+  for (c=0 ; c<=10 ; c++)
+  {
+    resultado[c][0] = 0;
+    resultado[c][1] = 0;
+  }
+
   for (c=1 ; c<=10 ; c++)
   {
     pont = 0;
 
+    printf ("\n\n");
+
     printf ("\n\nDigite o numero do aluno\n");
     scanf ("%d", &aluno);
+
+    for (q=0; q<=10 ; q++)
+    {
+      if (aluno == resultado[q][0])
+      {
+        while (aluno == resultado[q][0])
+        {
+          printf("\n\nAluno já cadastrado\nVerifique o numero e digite novamente\n");
+          scanf ("%d", &aluno);
+        }
+      }
+    }
 
     for (q=0; q<8 ; q++)
     {
@@ -94,7 +114,7 @@ int main()
     printf ("O aluno %d obteve nota [%d]\n", resultado[c][0], resultado[c][1]);
   }
 
-  printf ("\nHouve uma porcentagem de %d de aprovação\n\n", (apro * 100)/10);
+  printf ("\nHouve %d%% de aprovação\n\n", (apro * 100)/10);
   
   /*****Fim*****/
 

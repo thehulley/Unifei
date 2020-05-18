@@ -11,7 +11,7 @@ int main()
 
   printf ("\n\n-=-=-=-=-=-=-=-[ Alfabeto utilizado ]-=-=-=-=-=-=-=-\n\n(a b c d e f g h i j k l m n o p q r s t u v w x y z)\n\n");
 
-  printf ("Digite uma palavra\n");
+  printf ("Digite uma palavra       (Não utilize numeros, caso o mesmo ocorra o programa não irá exibir os numeros digitados)\n");
   scanf ("%s", palavra);
 
   n = 27;

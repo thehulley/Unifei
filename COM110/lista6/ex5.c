@@ -5,7 +5,7 @@
 int main()
 {
   int c, i, n, letras, a;
-  char palavra[129], alfabeto[27] = " abcdefghijklmnopqrstuvwxyz", p[3];        // O espaço existente no vetor alfabeto[] ocupa a posição [0] do vetor, assim essa posição é excluida
+  char palavra[129], cripto[129], alfabeto[27] = " abcdefghijklmnopqrstuvwxyz", p[3];        // O espaço existente no vetor alfabeto[] ocupa a posição [0] do vetor, assim essa posição é excluida
 
   system ("clear");
 
@@ -33,6 +33,7 @@ int main()
   for (c=letras ; c>0 ; c--)        // Move todos os valores uma casa acima, "excluindo" assim o valor do vetor na posição 0
   {
     palavra[c] = palavra[c - 1];
+    cripto[c] = ' ';
   }
 
   palavra[0] = ' ';       // O espaço é atribuido a palavra[0], para exclui-lo como no caso do vetor alfabeto[]
@@ -48,10 +49,12 @@ int main()
           if ((i + n) > 26)       // Testa se a soma de i com n resulta em maior que 26, se acontecer faz a operação abaixo
           {
             printf ("%c", alfabeto[(i + n) - 26]);
+            cripto[c] = alfabeto[(i + n) - 26];
           }
           else        // Se não acontecer exibe normalmente o valor de i+n (que resulta na posição final já adicionada a deslocação)
           {
             printf ("%c", alfabeto[i+n]);
+            cripto[c] = alfabeto[i+n];
           }
         }
       }
@@ -68,14 +71,17 @@ int main()
           if (i + n < 0)       // Testa se a soma de i com n resulta em menor que 0, se acontecer faz a operação abaixo
           {
             printf ("%c", alfabeto[26 + (i + n)]);
+            cripto[c] = alfabeto[26 + (i + n)];
           }
           else if (i + n == 0)       // Testa se a soma de i com n resulta em 0, como na posição 0 temos o espaço então não podemos exibi-lo pulando assim de volta para o valor 26
           {
             printf ("%c", alfabeto[26]); 
+            cripto[c] = alfabeto[26];
           }
           else        // Se não acontecer exibe normalmente o valor de i+n (que resulta na posição final já adicionada a deslocação)
           {
             printf ("%c", alfabeto[i + n]);
+            cripto[c] = alfabeto[i + n];
           }
         }
       }
@@ -87,6 +93,13 @@ int main()
     {
       printf ("%c", palavra[c]);
     }
+  }
+
+  printf ("\n\nString criptografada\n\n");
+
+  for (c=1 ; c<=letras ; c++)       // Exibe o vetor cripto[] (sei que não precisava disso, mas fiquei com medo do modo como exibia os valores não ser considerado como um dos requisitos da questão)
+  {
+    printf ("%c", cripto[c]);
   }
 
   printf ("\n\n");

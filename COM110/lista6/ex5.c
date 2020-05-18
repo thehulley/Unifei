@@ -7,6 +7,8 @@ int main()
   int c, i, n, letras, a;
   char palavra[129], alfabeto[27] = " abcdefghijklmnopqrstuvwxyz", p[3];        // O espaço existente no vetor alfabeto[] ocupa a posição [0] do vetor, assim essa posição é excluida
 
+  system ("clear");
+
   printf ("\n\n-=-=-=-=-=-=-=-[ Alfabeto utilizado ]-=-=-=-=-=-=-=-\n\n(a b c d e f g h i j k l m n o p q r s t u v w x y z)\n\n");
 
   printf ("Digite uma palavra\n");

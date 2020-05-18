@@ -54,7 +54,7 @@ int main()
       }
     }
 
-    printf ("\n");
+    printf ("\n\n");
 
     for (j=7; j>=0; j--)        // Parte que imprime em ordem decrescente durante a digitação dos valores do vetor numero[] 
     {

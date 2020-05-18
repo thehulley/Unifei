@@ -4,7 +4,7 @@
 int main()
 {
   int c, aluno, q, opcao, pont, resultado[10][2], apro, cadastrado;
-  char resposta, n[2], gabarito[8];
+  char resposta, n[999999], gabarito[8];
 
   opcao = 0;
   system ("clear");
@@ -48,7 +48,7 @@ int main()
 
   for (c=0 ; c<=10 ; c++)
   {
-    resultado[c][0] = 0;
+    resultado[c][0] = -1;
     resultado[c][1] = 0;
   }
 
@@ -68,7 +68,9 @@ int main()
         while (aluno == resultado[q][0])
         {
           printf("\n\nAluno já cadastrado\nVerifique o numero e digite novamente\n");
-          scanf ("%d", &aluno);
+          scanf ("%s", n);
+
+          aluno = atoi(n);
         }
       }
     }

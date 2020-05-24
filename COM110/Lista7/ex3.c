@@ -56,8 +56,8 @@ int main()
     }
   }
 
-  printf ("\n\nmenor = [%d,%d]\n", lugarmen[0][0]+1, lugarmen[0][1]+1);
-  printf ("maior = [%d,%d]\n", lugarmai[0][0]+1, lugarmai[0][1]+1);
+  printf ("\n\nmenor elemento = [%d,%d]\n", lugarmen[0][0]+1, lugarmen[0][1]+1);
+  printf ("MINMAX = [%d,%d]\n", lugarmai[0][0]+1, lugarmai[0][1]+1);
 
   return 0;
 }
